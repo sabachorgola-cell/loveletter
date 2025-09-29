@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elene + Saba ❤️</title>
+
+  <style>
+    :root{ --pink:#d6336c; --deep:#b22234; }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      padding:0;
+      font-family: Georgia, serif;
+      line-height:1.6;
+      background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+      min-height:100vh;
+      overflow-y:auto; /* allow scrolling */
+    }
+
+    /* Floating hearts */
+    .hearts{ position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+    .heart{ position:absolute; font-size:18px; opacity:.75; animation:floatUp linear forwards; }
+    @keyframes floatUp{
+      0%{ transform:translateY(100vh) translateX(0) scale(.9); opacity:0; }
+      10%{ opacity:.8; }
+      100%{ transform:translateY(-10vh) translateX(var(--drift,0px)) scale(1.2); opacity:0; }
+    }
+
+    /* Main layout */
+    .container{
+      position:relative; z-index:1;
+      display:flex; justify-content:space-between;
+      width:100%; padding:20px; gap:60px; margin:0 auto;
+      max-width:1800px;
+    }
+
+    .side{
+      width:25%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      text-align:center;
+      padding:10px 0;
+    }
+    .side-line{
+      font-size:1.6em;
+      font-weight:700;
+      margin:0;
+      line-height:1.3;
+      word-break: break-word;
+    }
+    .left .side-line{ color:var(--pink); }
+    .right .side-line{ color:var(--deep); font-style:italic; }
+
+    /* Letter */
+    .letter{
+      background:#fff;
+      padding:30px;
+      width:900px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      text-align:left;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+    .letter h2{
+      text-align:center;
+      color:var(--pink);
+      font-size:2em;
+      margin:0 0 20px;
+    }
+    .letter p{
+      font-size:1.15em;
+      color:#333;
+      margin:0;
+      text-align:justify; /* block style */
+      white-space:pre-line;
+    }
+
+    .closing{
+      margin-top:20px;
+      text-align:right;
+      font-size:1em;
+      font-style:italic;
+      color:#7a2b45;
+    }
+
+    .letter::before,.letter::after{ content:"❤️"; font-size:2em; position:absolute; }
+    .letter::before{ top:-16px; left:-16px; }
+    .letter::after{ bottom:-16px; right:-16px; }
+
+    /* Buttons */
+    .love-button,.secret-button{
+      display:block; margin:15px auto 0; padding:10px 20px; font-size:1em;
+      background-color:var(--pink); color:#fff; border:none; border-radius:14px; cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease, background-color .3s ease;
+      box-shadow:0 6px 14px rgba(214,51,108,.35);
+    }
+    .love-button:hover,.secret-button:hover{
+      background-color:var(--deep);
+      transform:translateY(-1px);
+      box-shadow:0 8px 18px rgba(178,34,52,.35);
+    }
+    .love-button{ animation:pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse{
+      0%,100%{ box-shadow:0 0 0 0 rgba(214,51,108,.45); }
+      50%{ box-shadow:0 0 22px 6px rgba(214,51,108,.45); }
+    }
+
+    .secret{
+      margin:12px auto 0;
+      max-width:95%;
+      padding:12px 16px;
+      border-radius:12px;
+      background:#fff4f6;
+      color:#7a2b45;
+      font-size:.95em;
+      display:none;
+      border:1px dashed #f1a3b7;
+    }
+
+    canvas#confetti{ position:fixed; inset:0; pointer-events:none; z-index:2; }
+
+    .quotes{ text-align:center; font-size:.9em; color:#6b2a40; margin-top:20px; font-style:italic; }
+
+    @media (max-width:1200px){
+      .container{ gap:20px; }
+      .side{ display:none; }
+      .letter{ width:min(92vw,900px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <canvas id="confetti"></canvas>
+
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <aside class="side left">
+      <div class="side-line">
+        „შენ ხარ ჩემი სიყვარული“<br>
+        „ჩემი მომავალი ხარ შენ“<br>
+        „ნამდვილი სიყვარული ყველაფერს სძლევს“
+      </div>
+      <div class="side-line">Elene + Saba = ❤️</div>
+      <div class="side-line">You are my happiness, my joy, and my safe place 🌸</div>
+    </aside>
+
+    <!-- LETTER -->
+    <main class="letter">
+      <h2>To My Love ❤️</h2>
+
+      <p>
+Me shen miyvarxar zalian zalian magrad. I cant pass a single hour without thinking about you,everything about you makes me happy even just thinking. you are my key to happiness, my safe place. dges prosta stream not many word told made me so happy. love doesnt need to be perfect but it should be mutual. I know how much you mean and matter to me and the place you hold in my heart but I dont know the place I hold in yours.Im ready to wait for this love felling and dream of being together even if the road of love is hard, if its with you, i am ready to walk it. we already have realy realy strong foundation of friendship and knowing each other for years and knowing each other very well,thatswhy i bealive we need strong foundation for our love.
+i see you as my girlfriend, my queen, my princess someone I love, someone I would do anything for, someone whose feelings matter deeply to me and can shape my own.I hope you can see me as your boyfriend someone you like and love, someone reliable who you can call for help or advice, who wont judge you, and who will always try to be your safe place. Please be honest with me about how you see your future do you see us being together beacuse i do, welI i dont want to force anything if the feeling isnt real. 
+But if it is real for you too, I am ready to give all of myself to this love and walk beside you for as long as god allows geficebi yvelafers rac me miyvars da rac chemtvis mnishvelovani aris i am ready to suffer to sacrifice things wait and chase my love for you if you allow me and if you will wait for me on the other side shenxar is adamiani vistan ertadac minda gavataro chemi cxovreba people wish for happiness in life for me you are that happiness. 
+I thank god everyday that i met you and he gave me enough power to confess my feelings for you shen xar uflisgan nabozebi sachuqari romlistvisas zalian madlobeli da bednieri var zalian miyvarxar da minda rom shenc giyvarde you are the one the only the true love miyvarxar zalian da gavagrzeleb shens siyvaruls chvens shori dashorebuli manzilis da drois miuxedavat, zalian did bodish gixdi ro fizikurad sashualeba ar mak italia davtovo ro gnaxo tore zalian zalian yovel dge minda i dont even know when the fuck documents will be ready thats why i wish for you to come in italy in best case scenario if i get documents you come to Italy and after we go to georgia together i hope documenta gets done before summer.I hoper we will meet soon, miyvarxar zalian magrad
+      </p>er
+
+      <div class="closing">From Saba Chorgoliani to his true love Elene Tsiklauri ❤️</div>
+
+      <button class="love-button" onclick="askLove()">💌 Click Me 💌</button>
+      <button class="secret-button" onclick="toggleSecret()">❤️ Open Secret</button>
+      <div class="secret" id="secret">
+        No distance, no time, no obstacle — nothing can shrink how big my love for you is. You are my favorite “forever.” 🌙✨
+      </div>
+
+      <div class="quotes" id="quotes"></div>
+    </main>
+
+    <!-- RIGHT SIDE -->
+    <aside class="side right">
+      <div class="side-line">
+        My Girlfriend is Future Radiant ✨<br>
+        The Girl Who Stole My Heart 💘
+      </div>
+      <div class="side-line">
+        Tbilisi • Vazisubani • XXXII-I Building<br>
+        Entrance 1 • 5th &amp; 7th Floor
+      </div>
+      <div class="side-line">
+        The Most Beautiful Soul I Know 💐<br>
+        Angel &amp; Queen of My Heart 👼👑
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    /* Floating hearts */
+    const heartsEl=document.getElementById('hearts');
+    const HEART_EMOJIS=['💗','💖','💘','💝','💕','❤️','🩷'];
+    function spawnHeart(){
+      const h=document.createElement('div');
+      h.className='heart';
+      h.textContent=HEART_EMOJIS[Math.floor(Math.random()*HEART_EMOJIS.length)];
+      const left=Math.random()*100;
+      const size=16+Math.random()*22;
+      const duration=8+Math.random()*10;
+      const delay=Math.random()*2;
+      const drift=(Math.random()*120-60)+'px';
+      h.style.left=left+'vw';
+      h.style.fontSize=size+'px';
+      h.style.setProperty('--drift',drift);
+      h.style.animationDuration=duration+'s';
+      h.style.animationDelay=delay+'s';
+      heartsEl.appendChild(h);
+      setTimeout(()=>h.remove(),(duration+2)*1000);
+    }
+    setInterval(spawnHeart,500);
+    for(let i=0;i<20;i++) spawnHeart();
+
+    /* Confetti */
+    const confetti=document.getElementById('confetti');
+    const ctx=confetti.getContext('2d');
+    function resizeCanvas(){ confetti.width=innerWidth; confetti.height=innerHeight; }
+    resizeCanvas(); addEventListener('resize',resizeCanvas);
+    let particles=[];
+    function burst(x,y){
+      const EMOJIS=['💖','✨','💘','💞','🌸','💫','🪽'];
+      for(let i=0;i<36;i++){
+        particles.push({x,y,vx:(Math.random()*2-1)*6,vy:(Math.random()*-1-1)*7,g:0.18+Math.random()*0.08,life:60+Math.random()*20,char:EMOJIS[Math.floor(Math.random()*EMOJIS.length)],size:20+Math.random()*10});
+      }
+      animateParticles();
+    }
+    let animId=null;
+    function animateParticles(){
+      if(animId) return;
+      function frame(){
+        ctx.clearRect(0,0,confetti.width,confetti.height);
+        particles.forEach(p=>{
+          p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.life--;
+          ctx.font=`${p.size}px serif`;
+          ctx.globalAlpha=Math.max(0,Math.min(1,p.life/80));
+          ctx.fillText(p.char,p.x,p.y);
+        });
+        particles=particles.filter(p=>p.life>0&&p.y<confetti.height+40);
+        if(particles.length){ animId=requestAnimationFrame(frame); }
+        else{ cancelAnimationFrame(animId); animId=null; ctx.clearRect(0,0,confetti.width,confetti.height); ctx.globalAlpha=1; }
+      }
+      animId=requestAnimationFrame(frame);
+    }
+
+    function askLove(){
+      const answer=confirm("Do you love me? (Click OK for Yes or Cancel for Yes 😁)");
+      alert(answer?"I love you too ❤️":"I love you too 😍");
+      burst(innerWidth/2,innerHeight/2);
+    }
+    function toggleSecret(){
+      const el=document.getElementById('secret');
+      const open=el.style.display==='block';
+      el.style.display=open?'none':'block';
+      if(!open){
+        const r=el.getBoundingClientRect();
+        burst(r.left+r.width/2,r.top-10);
+      }
+    }
+    window.askLove=askLove; window.toggleSecret=toggleSecret;
+
+    /* Rotating quotes */
+    const qEl=document.getElementById('quotes');
+    const quotes=[
+      "“You are my today and all of my tomorrows.”",
+      "“I look at you and see the rest of my life.”",
+      "“Whatever our souls are made of, her and mine are the same.”",
+      "“In a sea of people, my eyes will always search for you.”"
+    ];
+    let qi=0;
+    function showQuote(){
+      qEl.textContent=quotes[qi%quotes.length];
+      qi++;
+    }
+    showQuote();
+    setInterval(showQuote,6000);
+  </script>
+</body>
+</html>
